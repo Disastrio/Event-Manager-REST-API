@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: campus-events-api
+    runtime: node
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /api/v1/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: CORS_ORIGIN
+        value: "*"
+      - key: ADMIN_NAME
+        value: Platform Admin
+      - key: ADMIN_EMAIL
+        value: admin@campus.edu
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: SEED_SAMPLE_DATA
+        value: "true"
