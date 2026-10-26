@@ -10,9 +10,13 @@
 
 ## Current deployment
 
+> **Status: suspended.** The Render service is suspended and returns `503` until
+> resumed from the Render dashboard. The MongoDB Atlas free cluster and seeded
+> data remain intact, and suspended Render services are not billed.
+
 | Item | Value |
 | --- | --- |
-| Live API | <https://campus-events-api-19v5.onrender.com> |
+| Public URL (when resumed) | <https://campus-events-api-19v5.onrender.com> |
 | Swagger UI | <https://campus-events-api-19v5.onrender.com/api-docs> |
 | OpenAPI JSON | <https://campus-events-api-19v5.onrender.com/api-docs.json> |
 | Health check | <https://campus-events-api-19v5.onrender.com/api/v1/health> |
@@ -24,6 +28,8 @@
 > quiet period can take ~50 seconds. The Atlas cluster is on the free M0 tier.
 > Deployment secrets live in `.env.deploy` and are intentionally excluded from
 > git by the `.env.*` rule in `.gitignore`.
+>
+> To restore the API: Render Dashboard → `campus-events-api` → **Resume service**.
 
 ---
 
